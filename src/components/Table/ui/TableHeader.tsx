@@ -190,6 +190,7 @@ export const TableHeader = () => {
             </div>
           </div>
         </Th>
+        <Th data-testid='header-id'>Action</Th>
       </tr>
     </thead>
   )

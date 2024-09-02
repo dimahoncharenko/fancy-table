@@ -1,5 +1,6 @@
 import { Row as TRow } from '@/types/row'
 import dayjs from 'dayjs'
+import { Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import { Badge } from '@/components/Badge'
 import { cn } from '@/lib/utils'
@@ -8,12 +9,13 @@ import { Td } from './Td'
 
 export type Props = {
   data: TRow
+  handleDelete: (id: number) => void
   classNames?: {
     row?: string
   }
 }
 
-export const Row = ({ data, classNames }: Props) => {
+export const Row = ({ data, classNames, handleDelete }: Props) => {
   return (
     <tr
       className={cn(classNames?.row)}
@@ -66,6 +68,13 @@ export const Row = ({ data, classNames }: Props) => {
             {data.Status}
           </span>
         </Badge>
+      </Td>
+      <Td className='justify-center flex'>
+        <Trash2
+          className='text-danger cursor-pointer'
+          size={24}
+          onClick={() => handleDelete(data['Tracking ID'])}
+        />
       </Td>
     </tr>
   )
