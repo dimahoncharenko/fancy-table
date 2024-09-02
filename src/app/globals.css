@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+  }
+
+  body {
+    @apply bg-light text-black;
+  }
+}
+
+@layer components {
+  .section {
+    @apply pb-0 pt-10 md:py-9 xl:py-[55px];
+  }
+
+  .section .heading {
+    @apply mb-5 text-[1.75rem]/[2.275rem] font-medium md:mb-8 md:text-start md:text-[2rem]/[2.6rem] xl:mb-16 xl:text-center xl:text-[2.5rem]/[3.25rem];
+  }
+
+  .textLink-light {
+    @apply text-[0.813rem]/[1.056rem] text-white transition-colors duration-300 hover:text-accent xl:text-sm/[1.138rem];
+  }
+}
